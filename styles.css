@@ -7,19 +7,39 @@ body {
   color:black;
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
-
-
-   overflow-x: hidden;
-   position: absolute;
-   top: 0;
-   width: 100%;
-   height: 100%;
-   overflow: auto;
-   scroll-snap-points-y: repeat(100%);
-   scroll-snap-type: mandatory;
-   scroll-snap-destination: 100% 0%;
 }
 
+nav {
+  float: right;
+  max-height: 0;
+  width: 100%;
+  -webkit-transition: max-height 0.3s;
+     -moz-transition: max-height 0.3s;
+       -o-transition: max-height 0.3s;
+          transition: max-height 0.3s;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+   padding-bottom: 10px;
+}
+
+nav li {
+  display: block;
+  text-align: center;
+}
+
+nav a {
+  padding: 10px;
+  width: 100%;
+}
+
+#nav { display: none; }
+
+#nav:checked ~ nav {
+  max-height: 200px; /* This can be anything bigger than your nav height. The transition duration works with this */
+}
 button {
   font-family: 'Roboto', sans-serif;
   font-size: 32px;
@@ -50,8 +70,9 @@ button:hover {
 }
 
 .portfolio {
-  background: #2a2a2a;
-  /*height:100vh;*/
+  padding-top: 10vh;
+  background: #003344;
+  height:100vh;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
@@ -60,14 +81,14 @@ button:hover {
   /*-webkit-justify-content: center;*/
    justify-content: space-evenly;
    flex-wrap: wrap;
-
 }
 
 .portfolio-item {
   background: white;
-  /*height: 750px;*/
+  width: 30vw;
+  height: 30vh;
   text-align: center;
-  width: 20%;
+  width: 25%;
   /*padding:5px;*/
   margin: 30px;
   border:1px;
@@ -83,8 +104,6 @@ button:hover {
   margin: 0;
 }
 
-
-
 /* Navigation Menu - Background */
 .navigation {
   /* critical sizing and position styles */
@@ -95,10 +114,7 @@ button:hover {
   left: 0;
   bottom: 0;
   right: 0;
-
-
   z-index: 0;
-
   /* non-critical appearance styles */
   list-style: none;
   background: #111;
@@ -156,7 +172,7 @@ button:hover {
 label[for="nav-trigger"] {
   /* critical positioning styles */
   position: fixed;
-  right: 15px; top: 15px;
+  left: 15px; top: 15px;
   z-index: 2;
 
   /* non-critical apperance styles */
@@ -169,38 +185,80 @@ label[for="nav-trigger"] {
 
 /* Make the Magic Happen */
 .nav-trigger + label, .site-wrap {
-  transition: right 0.2s;
+  transition: left 0.2s;
 }
 
 .nav-trigger:checked + label {
-  right: 215px;
+  left: 215px;
 }
 
 .nav-trigger:checked ~ .site-wrap {
-  right: 200px;
+  left: 200px;
   box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
 }
 
-body {
-    /* Without this, the body has excess horizontal scroll when the menu is open */
-  overflow-x: hidden;
+.slider-container {
+    display: inline-block;
+    padding:0px;
+    overflow: hidden;
+    position: relative;
+    font-weight: 200;
 }
 
-/* Additional non-critical styles */
 
-h1, h3, p {
-  max-width: 600px;
-  margin: 0 auto 1em;
+.slider-item {
+    text-align: center;
+    border-color: #ff0055;
+    border-width: 0px;
+    border-style: solid;
+    height: 100%;
+    width:100%;
+    position: absolute;
+    z-index: 1;
+    top: 1000px;
+    padding: 15px 20px;
+    transition: 0.1s;
+    background: rgba(32,32,32,0.9);
+}
+.slider-item h1 {
+  color:white;
+  font-weight: 300;
+
+}
+.slider-item p {
+  color:white;
+  font-weight: 300;
 }
 
-code {
-    padding: 2px;
-    background: #ddd;
+.slider-container:hover .slider-item {
+    overflow: hidden;
+    top:0px;
+    /*width:100%;*/
 }
+
+.nav-container {
+    text-align: center;
+    border-color: #ff0055;
+    border-width: 0px;
+    border-style: solid;
+    height: 100%;
+    width:100%;
+    position: absolute;
+    z-index: 1;
+    left: 1000px;
+    padding: 15px 20px;
+    transition: 0.1s;
+    background: rgba(32,32,32,0.9);
+}
+.nav-container:hover .nav-bar {
+  overflow: hidden;
+  left:0px;
+}
+
 
 /* Micro reset */
 *,*:before,*:after{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0;}
-html, body { height: 100%; width: 100%; font-family: Helvetica, Arial, sans-serif; }
+html, body { height: 100%; width: 100%; }
 
 @media(max-width:768px) {
   .portfolio-item {
