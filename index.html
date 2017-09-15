@@ -2,91 +2,182 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <title>T/L</title>
     <link rel="stylesheet" href="./styles.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   </head>
   <body>
 
-<ul class="navigation">
-<li class="nav-item"><a href="#">Recent Work</a></li>
-<li class="nav-item"><a href="#">Resume</a></li>
-<li class="nav-item"><a href="#">Contact</a></li>
-<li class="nav-item"><a href="#">Git Hub</a></li>
-</ul>
+    <style media="screen">
+      .page {
+        display: flex;
+        width:100%;
+        height: 100%;
+        margin:0;
+        padding:0;
+        justify-content: center;
+        align-items: center;
+      }
+      .centered-container {
+        margin: 0 auto;
+        max-width: 30vw;
+      }
 
-<nav>
-   <ul>
-     <li><a href="#">One</a></li>
-     <li><a href="#">Two</a></li>
-     <li><a href="#">Three</a></li>
-     <li><a href="#">Four</a></li>
-   </ul>
- </nav> 
+      .image {
+        width:216px;
+        margin:0;
+      }
+      .row-one{
+          display:flex;
+          align-items: center;
+          flex-direction: row;
+          border-bottom: 2px solid  #e7ebee;
+          padding-bottom: 40px;
+          margin-bottom: 40px;
+      }
+      .rwo-one img{
+          flex-grow:0;
+          flex-shrink:0;
+      }
+      .row-one h1 {
+        font-size: 3rem;
+        letter-spacing:.08rem;
+        font-weight: 500;
+      }
+      .row-one h2 {
+        color:#878787;
+        font-size: 2.22rem;
+        letter-spacing:.08rem;
+        font-weight: 300;
+      }
+      .title {
+        padding:20px;
+      }
+      .row-two {
+        text-align: justify;
+      }
+      .row-two h2 {
+        font-size: 2rem;
+        line-height: 3rem;
+        margin-bottom: 2rem;
+        font-weight: 300;
+      }
+      ul {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        color:blue;
+      }
+      li {
+        color:black;
+        padding: 20px;
+      }
+      li:hover:{
 
-<input type="checkbox" id="nav-trigger" class="nav-trigger" />
-<label for="nav-trigger"></label>
-
-    <div class="site-wrap">
-      <div class="hero"></div>
-      <div class="portfolio">
-        <div class="portfolio-item slider-container">
-          <img src="./images/camp-rank.jpg" alt="camp rank">
-          <div class="slider-item">
-            <h1>Camp Ranker</h1>
-            <p>Link to campRank. This is an app that I build in conjunction with a Udemy Web Development course. I learned to use a number of technologies while building this app including ejs, node.js, mongoDB, passport authentication, RESTful Routes, express, etc.</p>
-            <a href="https://desolate-falls-89173.herokuapp.com/"><button type="button" name="button">View</button></a>
-          </div>
-        </div>
-
-        <div class="portfolio-item slider-container">
-          <img src="./images/todo-app.jpg" alt="todo app">
-          <div class="slider-item">
-            <h1>To Do</h1>
-            <p>Just your everyday 'learning what jQuery is' to-do application. Still, its pretty sleek though..open it up and you might find yourself hanging around longer than you thought.</p>
-            <a href="http://trevorlane.xyz/todo/"><button type="button" name="button">View</button></a>
-          </div>
-        </div>
-
-
-        <div class="portfolio-item slider-container">
-          <img src="./images/puppies-app.jpg" alt="blog app">
-            <div class="slider-item">
-              <h1>Blog App</h1>
-              <p>Link to simpleBlogApp. This is an app that I built to learn more about full stack app development. The stack I used includes express, node.js, mongoDB and ejs.</p>
-              <a href="https://boiling-harbor-27900.herokuapp.com/blogs"><button type="button" name="button">View</button></a>
-            </div>
-          </div>
-
-        <div class="portfolio-item slider-container">
-          <img src="./images/chuck-norris.jpg" alt="chuck norris">
-            <div class="slider-item">
-              <h1>Chuck Norris</h1>
-              <p>Link to a Chuck Norris quote generator. I built this to complete a requirement in the freecodecamp.com curriculum as well as become more familiar with API's.</p>
-              <a href="https://warm-tundra-25487.herokuapp.com/"><button type="button" name="button">View</button></a>
-            </div>
-          </div>
-
-
-        <div class="portfolio-item slider-container">
-          <img src="./images/tic-tac-toe.jpg" alt="tic tac tow">
-          <div class="slider-item">
-            <h1>Tic Tac Toe</h1>
-            <p>Tic tac toe. Play with a friend or against a super smart computer.</p>
-            <a href="http://trevorlane.xyz/tictactoe/"><button type="button" name="button">View</button></a>
-          </div>
-
-          </div>
-
-        <div class="portfolio-item slider-container">
-          <img src="./images/color-game.jpg" alt="color-game">
-              <div class="slider-item">
-                <h1>Color Game</h1>
-                <p>A game I build to get more familiar with plain javascript. Check it out for a test of your web design skills!</p>
-                <a href="http://trevorlane.xyz/colorGame/"><button type="button" name="button">View</button></a>
+        color: blue;
+      }
+      .fa {
+        font-size: 36px;
+        color: black;
+        padding-right: 10px;
+      }
+      .fa:hover{
+        color: blue;
+      }
+      .icon-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: black;
+      }
+    </style>
+    <div class="page">
+      <div class="centered-container">
+        <div class="row-one">
+              <img class="img-circle" src="./images/trevor.png" alt="">
+              <div class="title">
+                <h1>Trevor Lane</h1> <br>
+                <h2>CS Student - Web Developer</h2>
               </div>
-            </div>
+        </div>
+        <div class="row-two">
+          <h2>Hey, I'm a computer science student at Brigham Young University. I like to build rad web applications with web technologies like React, Polymer, Node.js, and MongoDB.</h2>
+          <br>
+          <h2>Feel free to take a look at some things i've built here or checkout my code on github. </h2>
+        </div>
+        <div class="row-three">
+          <h3>
+            <ul class="icon-list">
+              <li><a href="#"><i class="fa fa-envelope"></i>   Email</a></li>
+              <li><a href="#"><i class="fa fa-github"></i>     GitHub</a></li>
+              <li><a href="#"><i class="fa fa-linkedin"></i>     LinkedIn</a></li>
+              <li><a href="#"><i class="fa fa-paper-plane"></i>     Resume</a></li>
+              <li><a href="#"><i class="fa fa-code"></i>     Recent Projects</a></li>
+            </ul>
+          </h3>
+        </div>
       </div>
     </div>
+
+     <div class="portfolio">
+      <div class="portfolio-item slider-container">
+        <img src="./images/camp-rank.jpg" alt="camp rank">
+        <div class="slider-item">
+          <h1>Camp Ranker</h1>
+          <p>Link to campRank. This is an app that I build in conjunction with a Udemy Web Development course. I learned to use a number of technologies while building this app including ejs, node.js, mongoDB, passport authentication, RESTful Routes, express, etc.</p>
+          <a href="https://desolate-falls-89173.herokuapp.com/"><button type="button" name="button">View</button></a>
+        </div>
+      </div>
+      <div class="portfolio-item slider-container">
+        <img src="./images/todo-app.jpg" alt="todo app">
+        <div class="slider-item">
+          <h1>To Do</h1>
+          <p>Just your everyday 'learning what jQuery is' to-do application. Still, its pretty sleek though..open it up and you might find yourself hanging around longer than you thought.</p>
+          <a href="http://trevorlane.xyz/todo/"><button type="button" name="button">View</button></a>
+        </div>
+      </div>
+      <div class="portfolio-item slider-container">
+        <img src="./images/puppies-app.jpg" alt="blog app">
+          <div class="slider-item">
+            <h1>Blog App</h1>
+            <p>Link to simpleBlogApp. This is an app that I built to learn more about full stack app development. The stack I used includes express, node.js, mongoDB and ejs.</p>
+            <a href="https://boiling-harbor-27900.herokuapp.com/blogs"><button type="button" name="button">View</button></a>
+          </div>
+        </div>
+      <div class="portfolio-item slider-container">
+        <img src="./images/chuck-norris.jpg" alt="chuck norris">
+          <div class="slider-item">
+            <h1>Chuck Norris</h1>
+            <p>Link to a Chuck Norris quote generator. I built this to complete a requirement in the freecodecamp.com curriculum as well as become more familiar with API's.</p>
+            <a href="https://warm-tundra-25487.herokuapp.com/"><button type="button" name="button">View</button></a>
+          </div>
+        </div>
+      <div class="portfolio-item slider-container">
+        <img src="./images/tic-tac-toe.jpg" alt="tic tac tow">
+        <div class="slider-item">
+          <h1>Tic Tac Toe</h1>
+          <p>Tic tac toe. Play with a friend or against a super smart computer.</p>
+          <a href="http://trevorlane.xyz/tictactoe/"><button type="button" name="button">View</button></a>
+        </div>
+
+        </div>
+      <div class="portfolio-item slider-container">
+        <img src="./images/color-game.jpg" alt="color-game">
+            <div class="slider-item">
+              <h1>Color Game</h1>
+              <p>A game I build to get more familiar with plain javascript. Check it out for a test of your web design skills!</p>
+              <a href="http://trevorlane.xyz/colorGame/"><button type="button" name="button">View</button></a>
+            </div>
+          </div>
+    </div>
+
+
   </body>
 </html>
